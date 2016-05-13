@@ -1,5 +1,7 @@
 # Use phusion/baseimage as base image.
-FROM phusion/baseimage:0.9.15
+FROM phusion/baseimage:0.9.18
+
+MAINTAINER Masood Ahmed masood.ahmed09@gmail.com
 
 # Set correct environment variables.
 ENV HOME /root
@@ -28,10 +30,10 @@ RUN apt-key adv --keyserver keys.gnupg.net --recv-keys 4F4EA0AAE5267A6C
 RUN apt-get update
 RUN apt-get -y --force-yes upgrade
 
-# Install PHP5 (5.6.11)
-RUN apt-get install -y --force-yes php5-cli php5-dev php5-mysqlnd php5-curl php5-gd php5-gmp php5-mcrypt php5-redis php5-xdebug php5-xmlrpc libwebp-dev git php5-intl
+# Install PHP5 (5.6.21)
+RUN apt-get install -y --force-yes php5-cli php5-dev php5-mysqlnd php5-curl php5-gd php5-gmp php5-mcrypt php5-redis php5-xmlrpc libwebp-dev git php5-intl php5-xsl
 
-# Install Nginx (1.8.0) and PHP-FPM
+# Install Nginx (1.10.0) and PHP-FPM
 RUN apt-get install -y --force-yes nginx php5-fpm
 
 # Install composer
